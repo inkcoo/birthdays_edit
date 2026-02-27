@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "opennext:build": "npx opennext@latest build",
+    "build": "next build && npx @opennextjs/cloudflare",
     "start": "next start",
     "lint": "next lint",
-    "preview": "npx opennext@latest dev",
-    "deploy": "npx opennext@latest deploy"
+    "preview": "wrangler pages dev .opennext/output",
+    "deploy": "wrangler pages deploy .opennext/output"
   },
   "dependencies": {
     "next": "14.2.13",
@@ -19,7 +18,7 @@
     "lunar-javascript": "1.6.12"
   },
   "devDependencies": {
-    "opennext": "latest",
+    "@opennextjs/cloudflare": "^1.0.0",
     "@types/node": "20.12.7",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
