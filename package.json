@@ -11,22 +11,21 @@
     "deploy": "wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
-    "next": "14.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "jose": "^5.2.4",
-    "lunar-javascript": "^1.6.12"
+    "next": "14.2.13",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "jose": "5.2.4",
+    "lunar-javascript": "1.6.12"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.7",
-    "@types/node": "^20.12.7",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "typescript": "^5.4.5",
-    "wrangler": "^3.53.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "vercel": "^37.14.0"
+    "@cloudflare/next-on-pages": "1.13.7",
+    "@types/node": "20.12.7",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.4.5",
+    "wrangler": "3.53.0",
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.38",
+    "tailwindcss": "3.4.3"
   }
 }
