@@ -1,18 +1,9 @@
+# Cloudflare Pages 配置
+# 注意：KV 命名空间和环境变量请在 Cloudflare Dashboard 中配置
+# 此文件主要用于本地开发测试
+
 name = "birthday-manager"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = ".next"
 
-# KV 命名空间绑定
-# 部署前需要创建 KV 命名空间并替换下面的 ID
-# 创建命令：wrangler kv:namespace create "BIRTHDAYS_KV"
-[[kv_namespaces]]
-binding = "BIRTHDAYS_KV"
-id = "YOUR_KV_NAMESPACE_ID"
-
-# 环境变量配置
-# ADMIN_PASSWORD_HASH 需要在 Cloudflare Pages 后台设置
-# 使用 bcrypt 哈希后的管理员密码
-# 生成命令：npx bcrypt-cli hash "your_password"
-
-# 注意：API 密钥存储在 KV 中，不需要额外配置
-# 首次部署后需要在管理后台生成 API 密钥
+# Pages 部署不需要在此配置 KV，KV 绑定在 Dashboard 中设置
+# 本地开发时使用 wrangler pages dev 命令
