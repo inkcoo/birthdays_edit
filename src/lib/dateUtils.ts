@@ -1,3 +1,4 @@
+// @ts-ignore - lunar-javascript 没有类型定义
 import { Solar, Lunar } from 'lunar-javascript';
 import { BirthdayRecord, TodayBirthday } from '@/types';
 
