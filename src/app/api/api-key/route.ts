@@ -1,12 +1,11 @@
+export const runtime = 'edge';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/session';
 import { generateApiKey } from '@/lib/apiKey';
 
 const API_KEY_STORAGE_KEY = 'api_secret_key';
 
-/**
- * 验证登录状态
- */
 async function isAuthenticated(request: NextRequest): Promise<boolean> {
   const token = request.cookies.get('auth_token')?.value;
   if (!token) return false;
@@ -15,9 +14,6 @@ async function isAuthenticated(request: NextRequest): Promise<boolean> {
   return payload !== null;
 }
 
-/**
- * GET - 获取当前 API 密钥
- */
 export async function GET(request: NextRequest) {
   try {
     const isAuth = await isAuthenticated(request);
@@ -25,7 +21,6 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
     }
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {
@@ -44,9 +39,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-/**
- * POST - 生成新密钥或设置自定义密钥
- */
 export async function POST(request: NextRequest) {
   try {
     const isAuth = await isAuthenticated(request);
@@ -54,7 +46,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
     }
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {
@@ -67,7 +58,6 @@ export async function POST(request: NextRequest) {
     let newApiKey: string;
 
     if (customKey) {
-      // 使用自定义密钥
       if (!/^[a-zA-Z0-9]{16}$/.test(customKey)) {
         return NextResponse.json({ 
           error: '密钥必须是 16 位字母数字组合' 
@@ -75,7 +65,6 @@ export async function POST(request: NextRequest) {
       }
       newApiKey = customKey;
     } else {
-      // 生成随机密钥
       newApiKey = generateApiKey();
     }
 
@@ -92,9 +81,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-/**
- * DELETE - 删除 API 密钥（禁用公开访问）
- */
 export async function DELETE(request: NextRequest) {
   try {
     const isAuth = await isAuthenticated(request);
@@ -102,7 +88,6 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
     }
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {

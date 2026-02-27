@@ -1,12 +1,11 @@
+export const runtime = 'edge';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/session';
 import { parseBirthdaysText, toBirthdaysText, extractDepartments, removeDepartment } from '@/lib/parser';
 
 const BIRTHDAYS_KEY = 'birthdays.txt';
 
-/**
- * 验证登录状态
- */
 async function isAuthenticated(request: NextRequest): Promise<boolean> {
   const token = request.cookies.get('auth_token')?.value;
   if (!token) return false;
@@ -15,9 +14,6 @@ async function isAuthenticated(request: NextRequest): Promise<boolean> {
   return payload !== null;
 }
 
-/**
- * GET - 获取部门列表
- */
 export async function GET(request: NextRequest) {
   try {
     const isAuth = await isAuthenticated(request);
@@ -25,7 +21,6 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
     }
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {
@@ -43,9 +38,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-/**
- * DELETE - 删除指定部门的所有记录
- */
 export async function DELETE(request: NextRequest) {
   try {
     const isAuth = await isAuthenticated(request);
@@ -60,7 +52,6 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: '部门名称不能为空' }, { status: 400 });
     }
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {

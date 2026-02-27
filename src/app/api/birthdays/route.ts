@@ -1,12 +1,10 @@
+export const runtime = 'edge';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/session';
 
-// KV 存储键名
 const BIRTHDAYS_KEY = 'birthdays.txt';
 
-/**
- * 验证登录状态
- */
 async function isAuthenticated(request: NextRequest): Promise<boolean> {
   const token = request.cookies.get('auth_token')?.value;
   if (!token) return false;
@@ -15,19 +13,13 @@ async function isAuthenticated(request: NextRequest): Promise<boolean> {
   return payload !== null;
 }
 
-/**
- * GET - 获取生日记录文本
- */
 export async function GET(request: NextRequest) {
   try {
-    // 检查登录状态
     const isAuth = await isAuthenticated(request);
     if (!isAuth) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
     }
 
-    // 从 KV 读取数据
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {
@@ -46,12 +38,8 @@ export async function GET(request: NextRequest) {
   }
 }
 
-/**
- * PUT - 更新生日记录文本
- */
 export async function PUT(request: NextRequest) {
   try {
-    // 检查登录状态
     const isAuth = await isAuthenticated(request);
     if (!isAuth) {
       return NextResponse.json({ error: '未授权访问' }, { status: 401 });
@@ -59,8 +47,6 @@ export async function PUT(request: NextRequest) {
 
     const text = await request.text();
 
-    // 从 KV 读取数据
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {

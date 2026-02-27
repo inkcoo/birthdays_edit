@@ -1,0 +1,139 @@
+2026-02-27T10:10:41.311991Z	Cloning repository...
+2026-02-27T10:10:41.934553Z	From https://github.com/inkcoo/birthdays_edit
+2026-02-27T10:10:41.934808Z	 * branch            2215fca6d04bc9746aa30d538c8002900bfaa070 -> FETCH_HEAD
+2026-02-27T10:10:41.934858Z	
+2026-02-27T10:10:41.951378Z	HEAD is now at 2215fca Update wrangler.toml
+2026-02-27T10:10:41.951637Z	
+2026-02-27T10:10:41.986506Z	
+2026-02-27T10:10:41.986873Z	Using v2 root directory strategy
+2026-02-27T10:10:41.997646Z	Success: Finished cloning repository files
+2026-02-27T10:10:47.39471Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-02-27T10:10:47.395178Z	
+2026-02-27T10:10:47.3953Z	Found wrangler.toml file. Reading build configuration...
+2026-02-27T10:10:47.400385Z	pages_build_output_dir: .next
+2026-02-27T10:10:47.400539Z	Build environment variables: (none found)
+2026-02-27T10:10:48.500749Z	Successfully read the Wrangler configuration file.
+2026-02-27T10:10:48.663301Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-02-27T10:10:48.663716Z	Installing project dependencies: npm install --progress=false
+2026-02-27T10:10:56.817934Z	npm warn deprecated rollup-plugin-inject@3.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-inject.
+2026-02-27T10:10:56.986743Z	npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2026-02-27T10:11:04.729433Z	npm warn deprecated next@14.2.3: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/security-update-2025-12-11 for more details.
+2026-02-27T10:11:05.083926Z	
+2026-02-27T10:11:05.084242Z	added 166 packages, and audited 167 packages in 16s
+2026-02-27T10:11:05.084563Z	
+2026-02-27T10:11:05.084639Z	31 packages are looking for funding
+2026-02-27T10:11:05.084683Z	  run `npm fund` for details
+2026-02-27T10:11:05.187754Z	
+2026-02-27T10:11:05.188041Z	5 vulnerabilities (4 moderate, 1 critical)
+2026-02-27T10:11:05.188094Z	
+2026-02-27T10:11:05.188133Z	To address all issues (including breaking changes), run:
+2026-02-27T10:11:05.188208Z	  npm audit fix --force
+2026-02-27T10:11:05.188252Z	
+2026-02-27T10:11:05.18829Z	Run `npm audit` for details.
+2026-02-27T10:11:05.253341Z	Executing user command: npm run build
+2026-02-27T10:11:05.747663Z	
+2026-02-27T10:11:05.747939Z	> birthday-manager@1.0.0 build
+2026-02-27T10:11:05.748039Z	> next build
+2026-02-27T10:11:05.748106Z	
+2026-02-27T10:11:06.439276Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-02-27T10:11:06.442946Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-02-27T10:11:06.443055Z	This information is used to shape Next.js' roadmap and prioritize features.
+2026-02-27T10:11:06.443108Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-02-27T10:11:06.443246Z	https://nextjs.org/telemetry
+2026-02-27T10:11:06.443296Z	
+2026-02-27T10:11:06.488593Z	  ▲ Next.js 14.2.3
+2026-02-27T10:11:06.488836Z	
+2026-02-27T10:11:06.543227Z	   Creating an optimized production build ...
+2026-02-27T10:11:14.744412Z	 ✓ Compiled successfully
+2026-02-27T10:11:14.745309Z	   Skipping validation of types
+2026-02-27T10:11:14.745593Z	   Linting ...
+2026-02-27T10:11:14.996162Z	   Collecting page data ...
+2026-02-27T10:11:15.708953Z	   Generating static pages (0/12) ...
+2026-02-27T10:11:15.73126Z	   Generating static pages (3/12) 
+2026-02-27T10:11:15.736348Z	获取生日记录失败: q [Error]: Dynamic server usage: Route /api/public/birthdays couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+2026-02-27T10:11:15.739973Z	    at Object.get (/opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:37835)
+2026-02-27T10:11:15.740032Z	    at p (/opt/buildhome/repo/.next/server/app/api/public/birthdays/route.js:1:534)
+2026-02-27T10:11:15.740071Z	    at /opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:34672
+2026-02-27T10:11:15.740102Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+2026-02-27T10:11:15.74013Z	    at NoopContextManager.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+2026-02-27T10:11:15.740159Z	    at ContextAPI.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+2026-02-27T10:11:15.740193Z	    at NoopTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+2026-02-27T10:11:15.740222Z	    at ProxyTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+2026-02-27T10:11:15.740249Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+2026-02-27T10:11:15.740275Z	    at NoopContextManager.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062) {
+2026-02-27T10:11:15.740301Z	  description: "Route /api/public/birthdays couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+2026-02-27T10:11:15.740329Z	  digest: 'DYNAMIC_SERVER_USAGE'
+2026-02-27T10:11:15.740356Z	}
+2026-02-27T10:11:16.001648Z	   Generating static pages (6/12) 
+2026-02-27T10:11:16.006325Z	获取今日生日失败: q [Error]: Dynamic server usage: Route /api/today couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+2026-02-27T10:11:16.006871Z	    at Object.get (/opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:37835)
+2026-02-27T10:11:16.007164Z	    at F (/opt/buildhome/repo/.next/server/app/api/today/route.js:1:729)
+2026-02-27T10:11:16.007254Z	    at C (/opt/buildhome/repo/.next/server/app/api/today/route.js:1:832)
+2026-02-27T10:11:16.007397Z	    at /opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:34672
+2026-02-27T10:11:16.007657Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+2026-02-27T10:11:16.008134Z	    at NoopContextManager.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+2026-02-27T10:11:16.008518Z	    at ContextAPI.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+2026-02-27T10:11:16.008924Z	    at NoopTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+2026-02-27T10:11:16.009306Z	    at ProxyTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+2026-02-27T10:11:16.009717Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:122:103 {
+2026-02-27T10:11:16.010078Z	  description: "Route /api/today couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+2026-02-27T10:11:16.01043Z	  digest: 'DYNAMIC_SERVER_USAGE'
+2026-02-27T10:11:16.010578Z	}
+2026-02-27T10:11:16.030525Z	   Generating static pages (9/12) 
+2026-02-27T10:11:16.04133Z	获取生日记录失败: q [Error]: Dynamic server usage: Route /api/birthdays couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+2026-02-27T10:11:16.041468Z	    at Object.get (/opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:37835)
+2026-02-27T10:11:16.041511Z	    at c (/opt/buildhome/repo/.next/server/app/api/birthdays/route.js:1:677)
+2026-02-27T10:11:16.041544Z	    at d (/opt/buildhome/repo/.next/server/app/api/birthdays/route.js:1:780)
+2026-02-27T10:11:16.041573Z	    at /opt/buildhome/repo/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:34672
+2026-02-27T10:11:16.041601Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+2026-02-27T10:11:16.041631Z	    at NoopContextManager.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+2026-02-27T10:11:16.041663Z	    at ContextAPI.with (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+2026-02-27T10:11:16.0417Z	    at NoopTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+2026-02-27T10:11:16.041727Z	    at ProxyTracer.startActiveSpan (/opt/buildhome/repo/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+2026-02-27T10:11:16.041754Z	    at /opt/buildhome/repo/node_modules/next/dist/server/lib/trace/tracer.js:122:103 {
+2026-02-27T10:11:16.042099Z	  description: "Route /api/birthdays couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+2026-02-27T10:11:16.043983Z	  digest: 'DYNAMIC_SERVER_USAGE'
+2026-02-27T10:11:16.04416Z	}
+2026-02-27T10:11:16.085711Z	 ✓ Generating static pages (12/12)
+2026-02-27T10:11:16.21907Z	   Finalizing page optimization ...
+2026-02-27T10:11:16.219765Z	   Collecting build traces ...
+2026-02-27T10:11:20.693765Z	
+2026-02-27T10:11:20.696208Z	Route (app)                              Size     First Load JS
+2026-02-27T10:11:20.696356Z	┌ ○ /                                    145 B          87.1 kB
+2026-02-27T10:11:20.696416Z	├ ○ /_not-found                          871 B          87.9 kB
+2026-02-27T10:11:20.69645Z	├ ○ /admin                               3.39 kB        90.4 kB
+2026-02-27T10:11:20.696487Z	├ ƒ /api/api-key                         0 B                0 B
+2026-02-27T10:11:20.696535Z	├ ƒ /api/birthdays                       0 B                0 B
+2026-02-27T10:11:20.696592Z	├ ƒ /api/departments                     0 B                0 B
+2026-02-27T10:11:20.696636Z	├ ƒ /api/login                           0 B                0 B
+2026-02-27T10:11:20.696664Z	├ ƒ /api/public/birthdays                0 B                0 B
+2026-02-27T10:11:20.696691Z	├ ƒ /api/today                           0 B                0 B
+2026-02-27T10:11:20.696718Z	└ ○ /login                               1.17 kB        88.2 kB
+2026-02-27T10:11:20.696744Z	+ First Load JS shared by all            87 kB
+2026-02-27T10:11:20.696772Z	  ├ chunks/23-6de92bf77c16c86b.js        31.5 kB
+2026-02-27T10:11:20.696811Z	  ├ chunks/fd9d1056-62aaf4b921c84028.js  53.6 kB
+2026-02-27T10:11:20.696853Z	  └ other shared chunks (total)          1.89 kB
+2026-02-27T10:11:20.696896Z	
+2026-02-27T10:11:20.696937Z	
+2026-02-27T10:11:20.696987Z	○  (Static)   prerendered as static content
+2026-02-27T10:11:20.697107Z	ƒ  (Dynamic)  server-rendered on demand
+2026-02-27T10:11:20.697176Z	
+2026-02-27T10:11:20.742464Z	Finished
+2026-02-27T10:11:21.39645Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-02-27T10:11:21.397569Z	
+2026-02-27T10:11:21.397923Z	Found wrangler.toml file. Reading build configuration...
+2026-02-27T10:11:21.400551Z	pages_build_output_dir: .next
+2026-02-27T10:11:21.40069Z	Build environment variables: (none found)
+2026-02-27T10:11:22.472508Z	Successfully read the Wrangler configuration file.
+2026-02-27T10:11:22.473311Z	Note: No functions dir at /functions found. Skipping.
+2026-02-27T10:11:22.473418Z	Validating asset output directory
+2026-02-27T10:11:25.027455Z	Deploying your site to Cloudflare's global network...
+2026-02-27T10:11:38.569448Z	Uploading... (84/117)
+2026-02-27T10:11:41.514334Z	Uploading... (95/117)
+2026-02-27T10:11:42.361636Z	Uploading... (106/117)
+2026-02-27T10:11:44.150883Z	Uploading... (117/117)
+2026-02-27T10:11:44.15121Z	✨ Success! Uploaded 33 files (84 already uploaded) (5.90 sec)
+2026-02-27T10:11:44.151335Z	
+2026-02-27T10:11:44.549886Z	✨ Upload complete!
+2026-02-27T10:12:02.763325Z	Success: Assets published!
+2026-02-27T10:12:06.19959Z	Success: Your site was deployed!

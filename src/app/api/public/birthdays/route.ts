@@ -1,18 +1,15 @@
+export const runtime = 'edge';
+
 import { NextRequest, NextResponse } from 'next/server';
 
 const BIRTHDAYS_KEY = 'birthdays.txt';
 const API_KEY_STORAGE_KEY = 'api_secret_key';
 
-/**
- * GET - 公开 API，返回纯文本格式的 birthdays.txt
- * 需要有效的 API 密钥 (m 参数)
- */
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const apiKey = searchParams.get('m');
 
-    // @ts-ignore - Cloudflare KV binding
     const kv = (globalThis as any).BIRTHDAYS_KV;
     
     if (!kv) {
@@ -23,7 +20,6 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // 验证 API 密钥
     if (!apiKey) {
       return new NextResponse('缺少 API 密钥 (m 参数)', { 
         status: 401,

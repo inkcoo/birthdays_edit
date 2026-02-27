@@ -6,9 +6,14 @@ async function hashPassword(password: string): Promise<string> {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-async function verifyPassword(password: string, hash: string): Promise<boolean> {
-  const passwordHash = await hashPassword(password);
-  return passwordHash === hash;
+const password = process.argv[2];
+if (!password) {
+  console.error('Usage: npx ts-node scripts/hash-password.ts <password>');
+  process.exit(1);
 }
 
-export { hashPassword, verifyPassword };
+hashPassword(password).then(hash => {
+  console.log('Password hash (SHA-256):');
+  console.log(hash);
+  console.log('\nSet this as ADMIN_PASSWORD_HASH environment variable in Cloudflare Pages.');
+});
