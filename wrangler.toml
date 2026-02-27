@@ -1,7 +1,7 @@
 name = "birthday-manager"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = ".vercel/output/static"
+pages_build_output_dir = ".opennext/output"
 
 [[kv_namespaces]]
 binding = "BIRTHDAYS_KV"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "birthdays"
